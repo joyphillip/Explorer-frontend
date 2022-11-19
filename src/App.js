@@ -1,5 +1,6 @@
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 import './App.css';
 import { Auth } from './components/Auth';
 import Nav from './components/Nav';
@@ -13,6 +14,9 @@ import About from './components/About'
 
 
 function App() {
+  const isLoggedIn = useSelector((state) => state.isLoggedIn)
+  console.log(isLoggedIn)
+
   return <React.Fragment>
   <header>
     <Nav/>
