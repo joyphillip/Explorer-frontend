@@ -1,3 +1,16 @@
-.NavButton {
+.AppBar {
+  /* maybe add a gradient */
+  background: blueviolet; 
+  color: white;
+}
+
+.NavBtn {
   color: black;
+  margin: 1;
+  border-radius: 10;
+}
+
+.NavBox {
+  display: flex;
+  margin-left: auto ;
 }
