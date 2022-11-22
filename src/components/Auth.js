@@ -1,8 +1,10 @@
 import "../App.css"
 import { Button, Typography, TextField, Box } from '@mui/material'
 import React, { useState } from 'react'
+import axios from 'axios'
 
-let baseURL = process.env.REACT_APP_BACKEND_URL
+
+const baseURL = process.env.REACT_APP_BACKEND_URL
 
 export const Auth = () => {
   const [inputs, setInputs] = useState({
@@ -21,22 +23,16 @@ export const Auth = () => {
   }
 
 
-  const loginUser = (e) => {
-    e.preventDefault()
-    fetch(baseURL + '/user/login', {
-      method: 'POST',
-      body: JSON.stringify({
-        email: inputs.email,
-        password: inputs.password
-      }),
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      credentials: "include"
-    }).then(res => res.json())
-    .then(resJson => {
-      console.log(resJson)
-    })
+  const loginUser = async (type= 'login') => {
+    const res = await axios.post(`${baseURL}/user/login`, {
+      name: inputs.name,
+      email: inputs.email,
+      password: inputs.password
+    }).catch(err => console.log(err));
+
+    const data = await res.data
+    console.log(data)
+    return data
   }
 
   const handleSubmit = (e) => {
