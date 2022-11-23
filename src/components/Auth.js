@@ -2,11 +2,16 @@ import "../App.css"
 import { Button, Typography, TextField, Box } from '@mui/material'
 import React, { useState } from 'react'
 import axios from 'axios'
+import { useDispatch } from "react-redux"
+import { authActions } from "../store"
+import { useNavigate } from "react-router-dom"
 
 
 const baseURL = process.env.REACT_APP_BACKEND_URL
 
 export const Auth = () => {
+  const navigate = useNavigate()
+  const dispath = useDispatch()
   const [inputs, setInputs] = useState({
     name: "",
     email: "",
@@ -23,7 +28,7 @@ export const Auth = () => {
   }
 
 
-  const loginUser = async (type= 'login') => {
+  const sendRequest = async (type="login") => {
     const res = await axios.post(`${baseURL}/user/login`, {
       name: inputs.name,
       email: inputs.email,
@@ -31,15 +36,24 @@ export const Auth = () => {
     }).catch(err => console.log(err));
 
     const data = await res.data
-    console.log(data)
+    // console.log(data)
     return data
   }
+
+  // const register = 
+
+
 
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(inputs)
-    loginUser()
-  }
+    if (isRegistered) {
+      sendRequest("register").then(()=>dispath(authActions.login())).then(() => navigate("/posts"))
+    } else {
+      sendRequest().then(()=>dispath(authActions.login())).then(() => navigate("/posts"))
+    }
+  } 
+  
 
   return (
     <div>
