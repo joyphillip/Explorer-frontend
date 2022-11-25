@@ -10,10 +10,10 @@ import { authActions } from '../store'
   const isLoggedIn = useSelector((state) => state.isLoggedIn)
   const [value, setValue] = useState();
   return (
-    <AppBar className='AppBar'>
+    <AppBar class='AppBar' postition="sticky">
       <Toolbar>
         <Typography variant='h4'> Explorer </Typography>
-        { isLoggedIn && <Box className='Tabs'>
+        { isLoggedIn && <Box class='Tabs' display='flex'>
           <Tabs textColor='inherit' value={value} onChange={(e,val) => setValue(val)}>
             <Tab LinkComponent={Link} to='/about' label="About"></Tab>
             <Tab LinkComponent={Link} to='/posts' label="All Posts"></Tab>

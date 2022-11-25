@@ -29,7 +29,7 @@ export const Auth = () => {
 
 
   const sendRequest = async (type="login") => {
-    const res = await axios.post(`${baseURL}/user/login`, {
+    const res = await axios.post(`${baseURL}/user/${type}`, {
       name: inputs.name,
       email: inputs.email,
       password: inputs.password
@@ -39,9 +39,6 @@ export const Auth = () => {
     // console.log(data)
     return data
   }
-
-  // const register = 
-
 
 
   const handleSubmit = (e) => {
@@ -71,7 +68,7 @@ export const Auth = () => {
         borderRadius={5}
         >
           <Typography variant="h4" padding={3} textAlign='center'>
-          {isRegistered ? "Welcome" : "Login"}
+          {isRegistered ? "Register" : "Login"}
           </Typography>
         
         {isRegistered && <TextField name='name' onChange={handleChange} value={inputs.name} label='Name' margin="normal"/>}{" "}
@@ -79,8 +76,8 @@ export const Auth = () => {
           <TextField name='password' onChange={handleChange} value={inputs.password} type={'password'} label='Password' margin="normal"/> 
           <Button type='submit' sx={{borderRadius: 2, margin: 2}} variant='contained' color='success'> Enter </Button>
           
-          <div>Already have an account?</div>
-          <Button onClick={()=> setIsRegistered(!isRegistered)}> Login</Button>
+          {/* <div>Already have an account?</div> */}
+          <Button onClick={()=> setIsRegistered(!isRegistered)}> {isRegistered ? "Login" : "Register"}</Button>
         </Box>
       </form>
     </div>
