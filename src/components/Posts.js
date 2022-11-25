@@ -20,7 +20,16 @@ const Posts = () => {
 
   return (
     <div> 
-    <PostCard/>
+    {posts && posts.map((post, index) => (
+      <PostCard 
+      title={post.title}
+      description={post.description}
+      location={post.location}
+      date={post.date}
+      images={post.images}
+      userName={post.user.name}
+      />
+    ))}
     </div>
   )
 }

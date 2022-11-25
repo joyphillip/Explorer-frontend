@@ -45,9 +45,15 @@ export const Auth = () => {
     e.preventDefault();
     console.log(inputs)
     if (isRegistered) {
-      sendRequest("register").then(()=>dispath(authActions.login())).then(() => navigate("/posts"))
+      sendRequest("register")
+      .then((data) =>localStorage.setItem('userId', data.user._id))
+      .then(()=>dispath(authActions.login()))
+      .then(() => navigate("/posts"))
     } else {
-      sendRequest().then(()=>dispath(authActions.login())).then(() => navigate("/posts"))
+      sendRequest()
+      .then((data) =>localStorage.setItem('userId', data.user._id))
+      .then(()=>dispath(authActions.login()))
+      .then(() => navigate("/posts"))
     }
   } 
   
