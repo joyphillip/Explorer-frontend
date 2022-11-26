@@ -15,9 +15,9 @@ import { authActions } from '../store'
         <Typography variant='h4'> Explorer </Typography>
         { isLoggedIn && <Box class='Tabs' display='flex'>
           <Tabs textColor='inherit' value={value} onChange={(e,val) => setValue(val)}>
-            <Tab LinkComponent={Link} to='/about' label="About"></Tab>
             <Tab LinkComponent={Link} to='/posts' label="All Posts"></Tab>
             <Tab LinkComponent={Link} to='/myPosts' label="My Posts"></Tab>
+            <Tab LinkComponent={Link} to='/posts/create' label="Create"></Tab>
             <Tab LinkComponent={Link} to='/explore' label="Explore"></Tab>
           </Tabs>
         </Box>}

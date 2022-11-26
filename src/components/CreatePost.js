@@ -23,7 +23,7 @@ const CreatePost = () => {
   }
 
   const sendRequest = async() => {
-    const res = await axios.post(`${baseURL}/posts/create`, {
+    const res = await axios.post(`${baseURL}/posts`, {
       title: inputs.title,
       location: inputs.location,
       description: inputs.description,

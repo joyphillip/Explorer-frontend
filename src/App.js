@@ -9,7 +9,6 @@ import PostDetails from './components/PostDetails';
 import Posts from './components/Posts';
 import UserPosts from './components/UserPosts';
 import Explore from './api/explore'
-import About from './components/About'
 
 
 
@@ -30,7 +29,6 @@ function App() {
       <Route path='/myPosts' element={<UserPosts/>}></Route>
       <Route path='/myPosts/:id' element={<PostDetails/>}></Route>
       <Route path='/explore' element={<Explore/>}></Route>
-      <Route path='/about' element={<About/>}></Route>
     </Routes>
   </main>
     </React.Fragment>
