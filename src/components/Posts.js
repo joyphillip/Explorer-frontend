@@ -27,7 +27,7 @@ const Posts = () => {
       location={post.location}
       date={post.date}
       images={post.images}
-      userName={post.user.name}
+      user={post.user.name}
       />
     ))}
     </div>
