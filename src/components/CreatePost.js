@@ -1,12 +1,13 @@
 import React, {useState} from 'react'
 import { Button, Box, InputLabel, TextField, Typography } from '@mui/material'
 import axios from 'axios'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 
 const baseURL = process.env.REACT_APP_BACKEND_URL
 
 const CreatePost = () => {
+  const navigate = useNavigate()
   const [inputs, setInputs] = useState({
     title: "",
     location: "",
@@ -42,6 +43,7 @@ const CreatePost = () => {
     console.log(inputs)
     sendRequest()
     .then(data => console.log(data))
+    .then(()=> navigate('/posts'))
   }
 
   return (

@@ -23,13 +23,17 @@ function App() {
   </header>
   <main>
     <Routes>
-      <Route path='/auth' element={<Auth/>}></Route>
+    {!isLoggedIn ? ( <Route path='/auth' element={<Auth/>}/> ): (
+      <>
       <Route path='/posts' element={<Posts/>}></Route>
       <Route path='/posts/create' element={<CreatePost/>}></Route>
       <Route path='/myPosts' element={<UserPosts/>}></Route>
       <Route path='/myPosts/:id' element={<PostDetails/>}></Route>
       <Route path='/explore' element={<Explore/>}></Route>
+      </>
+      )}
     </Routes>
+    
   </main>
     </React.Fragment>
 }

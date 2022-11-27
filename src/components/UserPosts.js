@@ -25,6 +25,8 @@ const UserPosts = () => {
     <div>
       {user && user.posts && user.posts.map((post, index) => (
       <PostCard key={index}
+      id={post._id}
+      isUser={true}
       title={post.title}
       description={post.description}
       location={post.location}

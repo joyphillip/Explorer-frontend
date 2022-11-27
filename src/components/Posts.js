@@ -21,7 +21,9 @@ const Posts = () => {
   return (
     <div> 
     {posts && posts.map((post, index) => (
-      <PostCard 
+      <PostCard
+      id={post._id}
+      isUser={localStorage.getItem('userId') ===post.user._id}
       title={post.title}
       description={post.description}
       location={post.location}
