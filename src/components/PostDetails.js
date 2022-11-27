@@ -3,6 +3,8 @@ import { useNavigate, useParams } from 'react-router-dom'
 import axios from 'axios'
 import { Box, Typography, InputLabel, TextField, Button} from '@mui/material'
 
+const baseURL = process.env.REACT_APP_BACKEND_URL
+
 const PostDetails = () => {
   const navigate = useNavigate()
   const [post, setPost]= useState()
@@ -19,7 +21,7 @@ const PostDetails = () => {
   }
 
   const fetchDetails = async () => {
-    const res = await axios.get(`http://localhost:3000/posts/${id}`)
+    const res = await axios.get(`${baseURL}/posts/${id}`)
     .catch(err => console.log(err))
 
     const data = await res.data
@@ -40,7 +42,7 @@ const PostDetails = () => {
   }, [id])
 
   const sendRequest = async () => {
-    const res = await axios.put(`http://localhost:3000/posts/update/${id}`, {
+    const res = await axios.put(`${baseURL}/posts/update/${id}`, {
       title: inputs.title,
       location: inputs.location,
       description: inputs.description,

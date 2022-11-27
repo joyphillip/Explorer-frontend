@@ -5,6 +5,8 @@ import HighlightOffOutlinedIcon from '@mui/icons-material/HighlightOffOutlined';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios'
 
+const baseURL = process.env.REACT_APP_BACKEND_URL
+
 const PostCard = ({title, location, description, images, date, user, isUser, id }) => {
   const navigate = useNavigate()
 
@@ -13,7 +15,7 @@ const PostCard = ({title, location, description, images, date, user, isUser, id 
   }
   
   const deleteRequest = async () => {
-    const res = await axios.delete(`http://localhost:3000/posts/${id}`)
+    const res = await axios.delete(`${baseURL}/posts/${id}`)
     .catch(err=>console.log(err))
 
     const data = await res.data
