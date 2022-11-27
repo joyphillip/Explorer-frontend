@@ -3,23 +3,25 @@ import { useEffect, useState } from 'react'
 import axios from 'axios'
 import PostCard from './PostCard'
 
+const baseURL = process.env.REACT_APP_BACKEND_URL
+
 const UserPosts = () => {
-  // eslint-disable-next-line
   const [user, setUser] = useState()
   const id = localStorage.getItem('userId')
   
   const sendRequest = async () => {
-    const res = await axios.get(`http://localhost:3000/posts/user/${id}`).catch(err=>console.log(err))
+    const res = await axios.get(`${baseURL}/posts/user/${id}`)
+    .catch(err=>console.log(err))
 
     const data = await res.data
-    console.log(data)
+    // console.log(data)
     return data
   }
  
   useEffect(() => {
     sendRequest().then((data)=> setUser(data.user))
   })
-  console.log(user)
+  // console.log(user)
 
   return (
     <div>

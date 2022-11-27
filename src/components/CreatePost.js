@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import { Button, Box, InputLabel, TextField, Typography } from '@mui/material'
 import axios from 'axios'
-import { Link, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 
 
 const baseURL = process.env.REACT_APP_BACKEND_URL
@@ -105,8 +105,8 @@ const CreatePost = () => {
           type='submit'
           variant='contained'
           sx={{marginTop: 3}}
-          LinkComponent={Link} 
-          to='/myPosts' 
+          // LinkComponent={Link} 
+          // to='/myPosts' 
           >
           Create
           </Button>
