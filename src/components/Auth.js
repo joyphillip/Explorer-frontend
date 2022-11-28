@@ -64,6 +64,7 @@ export const Auth = () => {
     <div>
       <form onSubmit={handleSubmit}>
         <Box 
+        backgroundColor='white'
         maxWidth={400}
         display='flex'
         flexDirection='column'
@@ -72,7 +73,7 @@ export const Auth = () => {
         boxShadow='10px 10px 20px #ccc'
         padding={3}
         margin='auto'
-        marginTop={5}
+        marginTop={12}
         borderRadius={5}
         >
         <Avatar>

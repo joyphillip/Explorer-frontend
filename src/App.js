@@ -8,7 +8,7 @@ import CreatePost from './components/CreatePost';
 import EditPost from './components/EditPost'
 import Posts from './components/Posts';
 import UserPosts from './components/UserPosts';
-import Explore from './api/explore'
+import About from './components/About'
 
 
 
@@ -25,11 +25,11 @@ function App() {
     <Routes>
     {!isLoggedIn ? ( <Route path='/auth' element={<Auth/>}/> ): (
       <>
+      <Route path='/about' element={<About/>}></Route>
       <Route path='/posts' element={<Posts/>}></Route>
       <Route path='/posts/create' element={<CreatePost/>}></Route>
       <Route path='/myPosts' element={<UserPosts/>}></Route>
       <Route path='/myPosts/:id' element={<EditPost/>}></Route>
-      <Route path='/explore' element={<Explore/>}></Route>
       </>
       )}
     </Routes>

@@ -67,6 +67,7 @@ const EditPost = () => {
     {inputs && (
       <form onSubmit={handleSubmit}>
         <Box 
+        backgroundColor='white'
         border="inset"
         borderColor='black'
         borderRadius={10}

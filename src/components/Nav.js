@@ -4,6 +4,7 @@ import '../App.css'
 import { useDispatch, useSelector } from 'react-redux'
 import {Link} from 'react-router-dom'
 import { authActions } from '../store'
+import ConnectingAirportsIcon from '@mui/icons-material/ConnectingAirports';
 
  const Nav = () => {
   const dispath = useDispatch()
@@ -12,12 +13,13 @@ import { authActions } from '../store'
   
   
   return (
-    <AppBar class='AppBar' postition="sticky">
-      
+    <AppBar sx={{bgcolor:'green'}} position='sticky' >
       <Toolbar>
-        <Typography 
+        <Typography
+          fontFamily={'Caveat'}
+          fontSize={50} 
           variant='h4'> 
-          Explorer 
+          Explorer <ConnectingAirportsIcon fontSize='medium'/>
         </Typography>
 
         { isLoggedIn && (
@@ -29,6 +31,12 @@ import { authActions } from '../store'
           textColor='inherit' 
           value={value} 
           onChange={(e,val) => setValue(val)}>
+            
+            <Tab 
+            LinkComponent={Link} 
+            to='/about' 
+            label="About">
+            </Tab>
             
             <Tab 
             LinkComponent={Link} 
@@ -48,14 +56,10 @@ import { authActions } from '../store'
             label="Create">
             </Tab>
 
-            <Tab 
-            LinkComponent={Link} 
-            to='/explore' 
-            label="Explore"></Tab>
           </Tabs>
         </Box>)}
 
-        <Box className='NavBox'>
+        <Box sx={{display: "flex", marginLeft: 'auto'}}>
           { !isLoggedIn && 
           (<> 
           <Button 
@@ -75,7 +79,7 @@ import { authActions } from '../store'
           </Button> 
           </>)}
 
-          {isLoggedIn && (
+          {isLoggedIn && 
           <Button 
           onClick={()=>dispath(authActions.logout())} 
           LinkComponent={Link} 
@@ -83,7 +87,7 @@ import { authActions } from '../store'
           variant='contained' 
           sx={{ margin: 1, borderRadius: 10 }}> 
           Logout 
-          </Button>)}
+          </Button>}
         </Box>
       </Toolbar>
     </AppBar>
