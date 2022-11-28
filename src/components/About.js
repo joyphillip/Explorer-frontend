@@ -1,5 +1,5 @@
 import React from 'react'
-import { Avatar, Box, Typography } from '@mui/material'
+import { Box, Typography } from '@mui/material'
 const About = () => {
 
   return (
