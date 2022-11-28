@@ -75,7 +75,7 @@ import { authActions } from '../store'
           </Button> 
           </>)}
 
-          {isLoggedIn && 
+          {isLoggedIn && (
           <Button 
           onClick={()=>dispath(authActions.logout())} 
           LinkComponent={Link} 
@@ -83,7 +83,7 @@ import { authActions } from '../store'
           variant='contained' 
           sx={{ margin: 1, borderRadius: 10 }}> 
           Logout 
-          </Button>}
+          </Button>)}
         </Box>
       </Toolbar>
     </AppBar>
