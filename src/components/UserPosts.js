@@ -2,6 +2,7 @@ import React from 'react'
 import { useEffect, useState } from 'react'
 import axios from 'axios'
 import PostCard from './PostCard'
+import { Grid } from '@mui/material'
 
 const baseURL = process.env.REACT_APP_BACKEND_URL
 
@@ -25,7 +26,9 @@ const UserPosts = () => {
 
   return (
     <div>
+    <Grid container spacing={2} marginTop={3} margin='auto'>
       {user && user.posts && user.posts.map((post, index) => (
+      
       <PostCard key={index}
       id={post._id}
       isUser={true}
@@ -37,6 +40,7 @@ const UserPosts = () => {
       user={user.name}
       />
     ))}
+    </Grid>
     </div>
   )
 }

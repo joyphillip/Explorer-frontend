@@ -5,7 +5,7 @@ import { Box, Typography, InputLabel, TextField, Button} from '@mui/material'
 
 const baseURL = process.env.REACT_APP_BACKEND_URL
 
-const PostDetails = () => {
+const EditPost = () => {
   const navigate = useNavigate()
   const [post, setPost]= useState()
   const id = useParams().id
@@ -131,4 +131,4 @@ const PostDetails = () => {
   )
 }
 
-export default PostDetails
+export default EditPost

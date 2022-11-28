@@ -105,8 +105,6 @@ const CreatePost = () => {
           type='submit'
           variant='contained'
           sx={{marginTop: 3}}
-          // LinkComponent={Link} 
-          // to='/myPosts' 
           >
           Create
           </Button>

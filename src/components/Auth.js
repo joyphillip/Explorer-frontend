@@ -5,6 +5,8 @@ import axios from 'axios'
 import { useDispatch } from "react-redux"
 import { authActions } from "../store"
 import { useNavigate } from "react-router-dom"
+import Avatar from '@mui/material/Avatar';
+import ModeOfTravelOutlinedIcon from '@mui/icons-material/ModeOfTravelOutlined';
 
 
 const baseURL = process.env.REACT_APP_BACKEND_URL
@@ -73,19 +75,57 @@ export const Auth = () => {
         marginTop={5}
         borderRadius={5}
         >
-          <Typography variant="h4" padding={3} textAlign='center'>
-          {isRegistered ? "Register" : "Login"}
+        <Avatar>
+          <ModeOfTravelOutlinedIcon 
+          fontSize="large" 
+          sx={{color: "red"}}
+          /> 
+        </Avatar>
+          <Typography 
+            variant="h4" 
+            padding={3} 
+            textAlign='center'>
+            {isRegistered ? "Register" : "Login"}
           </Typography>
         
-        {isRegistered && <TextField name='name' onChange={handleChange} value={inputs.name} label='Name' margin="normal"/>}{" "}
-          <TextField  name='email' onChange={handleChange} value={inputs.email} type={'email'} label='Email' margin="normal"/>
-          <TextField name='password' onChange={handleChange} value={inputs.password} type={'password'} label='Password' margin="normal"/> 
-          <Button type='submit' sx={{borderRadius: 2, margin: 2}} variant='contained' color='success'> Enter </Button>
+        {isRegistered && <TextField 
+        name='name' 
+        onChange={handleChange} 
+        value={inputs.name} 
+        label='Name' 
+        margin="normal"/>}{" "}
+
+          <TextField  
+          name='email' 
+          onChange={handleChange} 
+          value={inputs.email} 
+          type={'email'} 
+          label='Email' 
+          margin="normal"/>
           
-          {/* <div>Already have an account?</div> */}
-          <Button onClick={()=> setIsRegistered(!isRegistered)}> {isRegistered ? "Login" : "Register"}</Button>
+          <TextField 
+          name='password' 
+          onChange={handleChange} 
+          value={inputs.password} 
+          type={'password'} 
+          label='Password' 
+          margin="normal"/> 
+
+          <Button 
+          type='submit' 
+          sx={{borderRadius: 2, margin: 2}} 
+          variant='contained' 
+          color='success'> 
+          Enter 
+          </Button>
+          
+          <Button 
+          onClick={()=> setIsRegistered(!isRegistered)}> 
+          {isRegistered ? "Login" : "Register"}
+          </Button>
         </Box>
       </form>
     </div>
   )
+
 }
