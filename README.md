@@ -1,70 +1,66 @@
-# Getting Started with Create React App
+## Project Title
+- Explorer
+## Project Description
+> General App Idea/Purpose<br />
+- Explorer is a blog like application that helps users store their travel memories and discover new places to travel. 
+> What technology stack(s) are you using for your frontend / backend?<br />
+- Front End:
+   - React, Material UI, JavaScript, HTML/CSS
+- Back End:
+   -   Express, Mongoose, MongoDB Atlas, NodeJS
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+> Models including field names and their datatypes<br />
+- Posts Model:
+   - Title = String
+   - Country = String
+   - Description = String
+   - Images = Array
+   - Date = String
+   - Favorite = Boolean
+  
+- User Model:
+   - Name = String, required
+   - Email = String, required
+   - Password = String, required
 
-## Available Scripts
+- Entity Relationship Diagram (ERD)
+![ERD Models](https://media.git.generalassemb.ly/user/43459/files/7cc0d9fc-b589-4cd0-9466-48ee14acfe4e)
 
-In the project directory, you can run:
 
-### `npm start`
+- Routes:
+   - /register = Register a User
+   - /login = Login User
+   - /logout = Logout User
+   - /explorer = Show all Posts (GET)
+   - /explorer/new = Create new post (POST)
+   - /explorer/:id = Show details of one post (GET)
+   - /explorer/:id = Edit a post (PUT)
+   - /explorer/:id = Delete a post (DELETE)
+  
+## Wireframes
+> Wireframes with basic page layouts<br />
+![Screen Shot 2022-11-01 at 4 26 19 PM](https://media.git.generalassemb.ly/user/43459/files/3824a8e6-005e-47f3-8683-db8357f712af)
+![Screen Shot 2022-11-01 at 4 30 14 PM](https://media.git.generalassemb.ly/user/43459/files/975739ec-dacf-4d79-a801-568ea91d9236)
+![Screen Shot 2022-11-01 at 7 38 56 PM](https://media.git.generalassemb.ly/user/43459/files/36fa913a-dfe8-486f-9e14-a6c90b340b1b)
+![Screen Shot 2022-11-01 at 7 39 17 PM](https://media.git.generalassemb.ly/user/43459/files/68ad6544-7907-4d3a-939d-faa39b4d3b75)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
+## Feasibility Study
+> If you're using an external API or scraping a website, make sure you can get that data. If you're using a new language, framework, or tool, go through it's getting started tutorial. We *will* ask to see your results. If you are planning to use an API, please show an example of a successful fetch below to the API you wish to use in your project.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## User Stories
+- As a User, I want to be able to register an account and sign-in with credentials.
+- As a User, I want to be able to see only the blog posts that I created.
+- As a User, I want to be able to create new blog posts.
+- As a User, I want to be able to edit and update blog posts.
+- As a User, I want to be able to log-out.
 
-### `npm run build`
+### MVP Goals
+- Full CRUD functionality.
+-  Authentication for one user to access all of their own posts.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Stretch Goals
+- Use a travel API for the User to get ideas and explore different places.
+- A page that renders all the User's photos like a photo album.
+- Implement Mapbox feature, so User can pin places that they have visited.
